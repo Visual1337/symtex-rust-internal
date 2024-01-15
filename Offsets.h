@@ -1,0 +1,1390 @@
+
+namespace offsets {
+	constexpr auto o_SendProjectileAttack = 0x91E570; // public void SendProjectileAttack(PlayerProjectileAttack attack) { }
+	constexpr auto o_SendProjectileUpdate = 0x91E630; // public void SendProjectileUpdate(PlayerProjectileUpdate update) { }
+	constexpr auto SendClientTickk = 0x91DE30; // internal void SendClientTick() { }
+	constexpr auto GetFovOverride = 0x618D40; // public float GetFovOverride() { }
+	constexpr auto WeakSpots = 0x3F8; // public PatrolHelicopter.weakspot[] weakspots;
+	constexpr auto o_EnvironmentTypeGet = 0x879E30; // public static EnvironmentType Get(Vector3 pos) { }
+	constexpr auto waterLevel = 0x8A8B40; // public static float GetWaterDepth(Vector3 pos, bool waves, bool volumes, BaseEntity forEntity) { }
+	constexpr auto o_GetIgnore = 0x92D330; // public bool GetIgnore(Vector3 pos, float radius = 0.01) { }
+	constexpr auto strpleGetStr = 0x9ECBA0; // 	public static string Get(uint i) { } // public class StringPool // TypeDefIndex: 2856
+	constexpr auto strpleGet = 0x9ECCD0; // 	public static uint Get(string str) { }  // public class StringPool 
+	constexpr auto o_RunTimedAction = 0xA806D0; //  public void RunTimedAction() { }
+	constexpr auto o_TextureCreate = 0x28F70B0; // 	internal void .ctor(int width, int height, GraphicsFormat format, TextureCreationFlags flags, int mipCount, IntPtr nativeTex) { }
+	constexpr auto o_TextureSetPixel = 0x28F6AB0; // public void SetPixel(int x, int y, Color color) { }
+	constexpr auto o_TextureApply = 0x28F59B0; // 	public void Apply(bool updateMipmaps) { }
+	constexpr auto o_GetInstanceID = 0x29041C0; // 	public int GetInstanceID() { } // public class Object
+	constexpr auto o_FindObjectFromInstanceID = 0x2903F40; // 	internal static Object FindObjectFromInstanceID(int instanceID) { } //  public class Object
+	constexpr auto o_RaycastBig = 0x2965320; // 	public static bool Raycast(Vector3 origin, Vector3 direction, out RaycastHit hitInfo, float maxDistance, int layerMask, QueryTriggerInteraction queryTriggerInteraction) { }
+	constexpr auto o_SphereCast = 0x29665D0; // 	public static bool SphereCast(Ray ray, float radius, float maxDistance, int layerMask) { }
+	constexpr auto o_Unload = 0x28CD720; // public void Unload(bool unloadAllLoadedObjects) { }
+	constexpr auto set_rayleigh = 0xC51DF0;// public static void set_atmosphere_rayleigh(float value) { }
+	constexpr auto set_mie = 0xC51D40; // public static void set_atmosphere_mie(float value) { }
+	constexpr auto set_brightness = 0xC51B30; // public static void set_atmosphere_brightness(float value) { }
+
+	constexpr auto ClearObjectList = 27550512; // System.Collections.Generic.List<object>$$Clear
+	constexpr auto FacepunchPoolGetobject = 19259888; // Facepunch.Pool$$Get<object>
+	constexpr auto ConsoleSystem_Index$$get_All = 15457504; // ConsoleSystem.Index$$get_All
+	constexpr auto Pool_Get_Attack = 54882408; // Method$Facepunch.Pool.Get<Attack>()
+	constexpr auto Pool_Get_PlayerProjectileAttack = 54918032; // Method$Facepunch.Pool.Get<PlayerProjectileAttack>()
+	constexpr auto Pool_Get_PlayerProjectileUpdate = 54918472; // Method$Facepunch.Pool.Get<PlayerProjectileUpdate>()
+	constexpr auto Method$BaseEntity_ServerRPC_PlayerProjectileAttack___ = 54885264; // Method$BaseEntity.ServerRPC<PlayerProjectileAttack>()
+	constexpr auto Method$BaseEntity_ServerRPC_PlayerProjectileUpdate___ = 54885704; // Method$BaseEntity.ServerRPC<PlayerProjectileUpdate>()
+	constexpr auto Method$BaseEntity_ServerRPCPlayerProjectileShoot__ = 54885920; // Method$BaseEntity.ServerRPC<ProjectileShoot>()
+}
+
+namespace O {
+	namespace BaseNetworkable {
+		constexpr auto JustCreatedk__BackingField = 0x18;
+		constexpr auto entityDestroy = 0x20;
+		constexpr auto prefabID = 0x28;
+		constexpr auto globalBroadcast = 0x2C;
+		constexpr auto globalBuildingBlock = 0x2D;
+		constexpr auto net = 0x30;
+		constexpr auto IsDestroyedk__BackingField = 0x38;
+		constexpr auto _prefabName = 0x40;
+		constexpr auto _prefabNameWithoutExtension = 0x48;
+		constexpr auto postNetworkUpdateComponents = 0x50;
+		constexpr auto parentEntity = 0x58;
+		constexpr auto children = 0x68;
+		constexpr auto canTriggerParent = 0x70;
+	};
+
+	namespace BaseEntity {
+		constexpr auto ragdoll = 0x78;
+		constexpr auto positionLerp = 0x80;
+		constexpr auto menuOptions = 0x88;
+		constexpr auto bounds = 0x90;
+		constexpr auto impactEffect = 0xA8;
+		constexpr auto enableSaving = 0xB0;
+		constexpr auto syncPosition = 0xB1;
+		constexpr auto model = 0xB8;
+		constexpr auto flags = 0xC0;
+		constexpr auto parentBone = 0xC4;
+		constexpr auto skinID = 0xC8;
+		constexpr auto _components = 0xD0;
+		constexpr auto HasBrain = 0xD8;
+		constexpr auto _name = 0xE0;
+		constexpr auto OwnerIDk__BackingField = 0xE8;
+		constexpr auto globalBroadcastProtocol = 0x8;
+		constexpr auto broadcastProtocol = 0xF0;
+		constexpr auto links = 0xF8;
+		constexpr auto linkedToNeighbours = 0x100;
+		constexpr auto QueuedFileRequests = 0x10;
+		constexpr auto _fileRequestCounter = 0x18;
+		constexpr auto _flushQueuedFileRequests = 0x30;
+		constexpr auto _pendingFileRequests = 0x108;
+		constexpr auto updateParentingAction = 0x110;
+		constexpr auto addedToParentEntity = 0x118;
+		constexpr auto itemSkin = 0x120;
+		constexpr auto entitySlots = 0x128;
+		constexpr auto triggers = 0x130;
+		constexpr auto isVisible = 0x138;
+		constexpr auto isAnimatorVisible = 0x139;
+		constexpr auto isShadowVisible = 0x13A;
+		constexpr auto localOccludee = 0x140;
+		constexpr auto Weightk__BackingField = 0x160;
+	};
+
+	namespace BasePlayer {
+		constexpr auto __menuOption_Climb = 0x270;
+		constexpr auto __menuOption_Drink = 0x2F0;
+		constexpr auto __menuOption_InviteToClan = 0x370;
+		constexpr auto __menuOption_InviteToTeam = 0x3F0;
+		constexpr auto __menuOption_Menu_AssistPlayer = 0x470;
+		constexpr auto __menuOption_Menu_LootPlayer = 0x4F0;
+		constexpr auto __menuOption_Promote = 0x570;
+		constexpr auto __menuOption_SaltWater = 0x5F0;
+		constexpr auto ClanInviteFailure = 0x8;
+		constexpr auto ClanInviteFull = 0x10;
+		constexpr auto clanId = 0x670;
+		constexpr auto playerModel = 0x678;
+		constexpr auto Frozen = 0x680;
+		constexpr auto voiceRecorder = 0x688;
+		constexpr auto voiceSpeaker = 0x690;
+		constexpr auto input = 0x698;
+		constexpr auto movement = 0x6A0;
+		constexpr auto collision = 0x6A8;
+		constexpr auto bagCount = 0x6B0;
+		constexpr auto emptyState = 0x18;
+		constexpr auto modelInitUnderwear = 0x6B4;
+		constexpr auto _lookingAt = 0x6B8;
+		constexpr auto _lookingAtEntity = 0x6C0;
+		constexpr auto _lookingAtCollider = 0x6C8;
+		constexpr auto lookingAtPointk__BackingField = 0x6D0;
+		constexpr auto wakeTime = 0x6DC;
+		constexpr auto needsClothesRebuild = 0x6E0;
+		constexpr auto wasSleeping = 0x6E1;
+		constexpr auto wokeUpBefore = 0x6E2;
+		constexpr auto wasDead = 0x6E3;
+		constexpr auto HasMountedClothingk__BackingField = 0x6E4;
+		constexpr auto lastClothesHash = 0x6E8;
+		constexpr auto visiblePlayerList = 0x20;
+		constexpr auto craftMode = 0x28;
+		constexpr auto lootPanelOverride = 0x30;
+		constexpr auto lastOpenSoundPlay = 0x6EC;
+		constexpr auto currentViewMode = 0x6F0;
+		constexpr auto selectedViewMode = 0x6F4;
+		constexpr auto lastRevivePoint = 0x6F8;
+		constexpr auto lastReviveDirection = 0x704;
+		constexpr auto IsWearingDiveGogglesk__BackingField = 0x710;
+		constexpr auto GestureViewModel = 0x718;
+		constexpr auto currentClientRespawnInformation = 0x720;
+		constexpr auto respawnOptionsTimestamp = 0x728;
+		constexpr auto lastParachuteRequest = 0x72C;
+		constexpr auto timeSinceUpdatedLookingAt = 0x730;
+		constexpr auto nextTopologyTestTime = 0x734;
+		constexpr auto usePressTime = 0x738;
+		constexpr auto useHeldTime = 0x73C;
+		constexpr auto lookingAtTest = 0x740;
+		constexpr auto lastDeathTimeClient = 0x38;
+		constexpr auto _localTransferProtectionExpires = 0x3C;
+		constexpr auto cachedWaterDrinkingPoint = 0x748;
+		constexpr auto hasRequestedServerEmoji = 0x754;
+		constexpr auto outstandingEmojiRequests = 0x758;
+		constexpr auto timeGatedEmojiRequests = 0x760;
+		constexpr auto gestureList = 0x768;
+		constexpr auto gestureFinishedTime = 0x770;
+		constexpr auto blockHeldInputTimer = 0x774;
+		constexpr auto currentGesture = 0x778;
+		constexpr auto disabledHeldEntity = 0x780;
+		constexpr auto nextGestureMenuOpenTime = 0x788;
+		constexpr auto lastGestureCancel = 0x78C;
+		constexpr auto client_lastHelloTime = 0x790;
+		constexpr auto currentTeam = 0x798;
+		constexpr auto MaxTeamSizeToast = 0x40;
+		constexpr auto clientTeam = 0x7A0;
+		constexpr auto lastReceivedTeamTime = 0x7A8;
+		constexpr auto lastPresenceTeamId = 0x7B0;
+		constexpr auto lastPresenceTeamSize = 0x7B8;
+		constexpr auto playerGroupKey = 0x7C0;
+		constexpr auto playerGroupSizeKey = 0x7C8;
+		constexpr auto clActiveItem = 0x7D0;
+		constexpr auto MarkerLimitPhrase = 0x48;
+		constexpr auto ClientCurrentMapNotes = 0x7D8;
+		constexpr auto ClientCurrentDeathNote = 0x7E0;
+		constexpr auto keepOpenMapInterface = 0x7E8;
+		constexpr auto missions = 0x7F0;
+		constexpr auto _activeMission = 0x7F8;
+		constexpr auto modelState = 0x800;
+		constexpr auto mounted = 0x808;
+		constexpr auto nextSeatSwapTime = 0x818;
+		constexpr auto mountInputHeldDuringDismount = 0x81C;
+		constexpr auto PetEntity = 0x820;
+		constexpr auto lastPetCommandIssuedTime = 0x828;
+		constexpr auto PetPrefabID = 0x82C;
+		constexpr auto PetID = 0x830;
+		constexpr auto PetWheelHasBeenOpened = 0x50;
+		constexpr auto HostileTitle = 0x58;
+		constexpr auto HostileDesc = 0x60;
+		constexpr auto HostileMarker = 0x68;
+		constexpr auto GoToTitle = 0x88;
+		constexpr auto GoToDesc = 0x90;
+		constexpr auto GoToMarker = 0x98;
+		constexpr auto DollarTitle = 0xB8;
+		constexpr auto DollarDesc = 0xC0;
+		constexpr auto DollarMarker = 0xC8;
+		constexpr auto LootTitle = 0xE8;
+		constexpr auto LootDesc = 0xF0;
+		constexpr auto LootMarker = 0xF8;
+		constexpr auto NodeTitle = 0x118;
+		constexpr auto NodeDesc = 0x120;
+		constexpr auto NodeMarker = 0x128;
+		constexpr auto GunTitle = 0x148;
+		constexpr auto GunDesc = 0x150;
+		constexpr auto GunMarker = 0x158;
+		constexpr auto RadialPings = 0x178;
+		constexpr auto ClientCurrentPings = 0x838;
+		constexpr auto tapInProcess = 0x840;
+		constexpr auto lastPingTap = 0x844;
+		constexpr auto cachedBuildingPrivilegeTime = 0x848;
+		constexpr auto cachedBuildingPrivilege = 0x850;
+		constexpr auto cachedVehicleBuildingBlockedTime = 0x858;
+		constexpr auto cachedVehicleBuildingBlocked = 0x85C;
+		constexpr auto cachedEntityBuildingBlockedTime = 0x860;
+		constexpr auto cachedEntityBuildingBlocked = 0x864;
+		constexpr auto cachedPrivilegeFromOther = 0x868;
+		constexpr auto cachedPrivilegeFromOtherTime = 0x870;
+		constexpr auto maxProjectileID = 0x874;
+		constexpr auto lastSpectateCameraUpdate = 0x878;
+		constexpr auto currentSpectateTeamInfo = 0x180;
+		constexpr auto memberBuffer = 0x188;
+		constexpr auto filterSpectateMapTeamID = 0x190;
+		constexpr auto lastReceivedSpectateTeamInfo = 0x194;
+		constexpr auto lastUpdateTime = 0x87C;
+		constexpr auto cachedThreatLevel = 0x880;
+		constexpr auto serverTickRate = 0x884;
+		constexpr auto clientTickRate = 0x888;
+		constexpr auto serverTickInterval = 0x88C;
+		constexpr auto clientTickInterval = 0x890;
+		constexpr auto lastSentTickTime = 0x894;
+		constexpr auto lastTickStopwatch = 0x898;
+		constexpr auto lastSentTick = 0x8A0;
+		constexpr auto nextVisThink = 0x8A8;
+		constexpr auto lastTimeSeen = 0x8AC;
+		constexpr auto debugPrevVisible = 0x8B0;
+		constexpr auto fallDamageEffect = 0x8B8;
+		constexpr auto drownEffect = 0x8C0;
+		constexpr auto playerFlags = 0x8C8;
+		constexpr auto eyes = 0x8D0;
+		constexpr auto inventory = 0x8D8;
+		constexpr auto blueprints = 0x8E0;
+		constexpr auto metabolism = 0x8E8;
+		constexpr auto modifiers = 0x8F0;
+		constexpr auto playerCollider = 0x8F8;
+		constexpr auto Belt = 0x900;
+		constexpr auto playerRigidbody = 0x908;
+		constexpr auto userID = 0x910;
+		constexpr auto UserIDString = 0x918;
+		constexpr auto gamemodeteam = 0x920;
+		constexpr auto reputation = 0x924;
+		constexpr auto _displayName = 0x928;
+		constexpr auto _lastSetName = 0x930;
+		constexpr auto playerColliderStanding = 0x938;
+		constexpr auto playerColliderDucked = 0x94C;
+		constexpr auto playerColliderCrawling = 0x960;
+		constexpr auto playerColliderLyingDown = 0x974;
+		constexpr auto cachedProtection = 0x988;
+		constexpr auto oldCameraFix = 0x198;
+		constexpr auto lastHeadshotSoundTime = 0x990;
+		constexpr auto nextColliderRefreshTime = 0x994;
+		constexpr auto clothingBlocksAiming = 0x998;
+		constexpr auto clothingMoveSpeedReduction = 0x99C;
+		constexpr auto clothingWaterSpeedBonus = 0x9A0;
+		constexpr auto clothingAccuracyBonus = 0x9A4;
+		constexpr auto equippingBlocked = 0x9A8;
+		constexpr auto eggVision = 0x9AC;
+		constexpr auto activeTelephone = 0x9B0;
+		constexpr auto designingAIEntity = 0x9B8;
+	};
+
+	namespace BaseMovement {
+		constexpr auto adminCheat = 0x18;
+		constexpr auto adminSpeed = 0x1C;
+		constexpr auto Ownerk__BackingField = 0x20;
+		constexpr auto InheritedVelocityk__BackingField = 0x28;
+		constexpr auto TargetMovementk__BackingField = 0x34;
+		constexpr auto Runningk__BackingField = 0x40;
+		constexpr auto Duckingk__BackingField = 0x44;
+		constexpr auto Crawlingk__BackingField = 0x48;
+		constexpr auto Groundedk__BackingField = 0x4C;
+		constexpr auto lastTeleportedTime = 0x50;
+	};
+
+	namespace BaseProjectile {
+		constexpr auto NoiseRadius = 0x280;
+		constexpr auto damageScale = 0x284;
+		constexpr auto distanceScale = 0x288;
+		constexpr auto projectileVelocityScale = 0x28C;
+		constexpr auto automatic = 0x290;
+		constexpr auto usableByTurret = 0x291;
+		constexpr auto turretDamageScale = 0x294;
+		constexpr auto attackFX = 0x298;
+		constexpr auto silencedAttack = 0x2A0;
+		constexpr auto muzzleBrakeAttack = 0x2A8;
+		constexpr auto MuzzlePoint = 0x2B0;
+		constexpr auto reloadTime = 0x2B8;
+		constexpr auto canUnloadAmmo = 0x2BC;
+		constexpr auto primaryMagazine = 0x2C0;
+		constexpr auto fractionalReload = 0x2C8;
+		constexpr auto reloadStartDuration = 0x2CC;
+		constexpr auto reloadFractionDuration = 0x2D0;
+		constexpr auto reloadEndDuration = 0x2D4;
+		constexpr auto aimSway = 0x2D8;
+		constexpr auto aimSwaySpeed = 0x2DC;
+		constexpr auto recoil = 0x2E0;
+		constexpr auto aimconeCurve = 0x2E8;
+		constexpr auto aimCone = 0x2F0;
+		constexpr auto hipAimCone = 0x2F4;
+		constexpr auto aimconePenaltyPerShot = 0x2F8;
+		constexpr auto aimConePenaltyMax = 0x2FC;
+		constexpr auto aimconePenaltyRecoverTime = 0x300;
+		constexpr auto aimconePenaltyRecoverDelay = 0x304;
+		constexpr auto stancePenaltyScale = 0x308;
+		constexpr auto hasADS = 0x30C;
+		constexpr auto noAimingWhileCycling = 0x30D;
+		constexpr auto manualCycle = 0x30E;
+		constexpr auto needsCycle = 0x30F;
+		constexpr auto isCycling = 0x310;
+		constexpr auto aiming = 0x311;
+		constexpr auto useEmptyAmmoState = 0x312;
+		constexpr auto isBurstWeapon = 0x313;
+		constexpr auto canChangeFireModes = 0x314;
+		constexpr auto defaultOn = 0x315;
+		constexpr auto internalBurstRecoilScale = 0x318;
+		constexpr auto internalBurstFireRateScale = 0x31C;
+		constexpr auto internalBurstAimConeScale = 0x320;
+		constexpr auto Toast_BurstDisabled = 0x328;
+		constexpr auto Toast_BurstEnabled = 0x330;
+		constexpr auto resetDuration = 0x338;
+		constexpr auto numShotsFired = 0x33C;
+		constexpr auto nextReloadTime = 0x340;
+		constexpr auto startReloadTime = 0x344;
+		constexpr auto stancePenalty = 0x348;
+		constexpr auto aimconePenalty = 0x34C;
+		constexpr auto cachedModHash = 0x350;
+		constexpr auto sightAimConeScale = 0x354;
+		constexpr auto sightAimConeOffset = 0x358;
+		constexpr auto hipAimConeScale = 0x35C;
+		constexpr auto hipAimConeOffset = 0x360;
+		constexpr auto Param_Ammo_False = 0x4;
+		constexpr auto isReloading = 0x364;
+		constexpr auto timeSinceReloadFinished = 0x368;
+		constexpr auto swaySampleTime = 0x36C;
+		constexpr auto lastShotTime = 0x370;
+		constexpr auto reloadPressTime = 0x374;
+		constexpr auto ammoTypePreReload = 0x378;
+		constexpr auto fractionalReloadDesiredCount = 0x380;
+		constexpr auto fractionalReloadNumAdded = 0x384;
+		constexpr auto currentBurst = 0x388;
+		constexpr auto triggerReady = 0x38C;
+		constexpr auto nextHeightCheckTime = 0x390;
+		constexpr auto cachedUnderground = 0x394;
+		constexpr auto createdProjectiles = 0x398;
+	};
+
+	namespace BaseMountable {
+		constexpr auto __menuOption_Menu_Mount = 0x270;
+		constexpr auto eyePositionOverride = 0x2F0;
+		constexpr auto eyeCenterOverride = 0x2F8;
+		constexpr auto pitchClamp = 0x300;
+		constexpr auto yawClamp = 0x308;
+		constexpr auto canWieldItems = 0x310;
+		constexpr auto relativeViewAngles = 0x311;
+		constexpr auto mountAnchor = 0x318;
+		constexpr auto mountLOSVertOffset = 0x320;
+		constexpr auto mountPose = 0x324;
+		constexpr auto maxMountDistance = 0x328;
+		constexpr auto dismountPositions = 0x330;
+		constexpr auto checkPlayerLosOnMount = 0x338;
+		constexpr auto disableMeshCullingForPlayers = 0x339;
+		constexpr auto allowHeadLook = 0x33A;
+		constexpr auto ignoreVehicleParent = 0x33B;
+		constexpr auto legacyDismount = 0x33C;
+		constexpr auto wearWhileMounted = 0x340;
+		constexpr auto modifiesPlayerCollider = 0x348;
+		constexpr auto customPlayerCollider = 0x34C;
+		constexpr auto mountSoundDef = 0x360;
+		constexpr auto swapSoundDef = 0x368;
+		constexpr auto dismountSoundDef = 0x370;
+		constexpr auto dismountHoldType = 0x378;
+		constexpr auto mountTimeStatType = 0x37C;
+		constexpr auto allowedGestures = 0x380;
+		constexpr auto canDrinkWhileMounted = 0x384;
+		constexpr auto allowSleeperMounting = 0x385;
+		constexpr auto animateClothInLocalSpace = 0x386;
+		constexpr auto MountedCameraMode = 0x388;
+		constexpr auto rigidBody = 0x390;
+		constexpr auto isMobile = 0x398;
+		constexpr auto SideLeanAmount = 0x39C;
+	};
+
+	namespace BaseHelicopter {
+		constexpr auto __menuOption_Menu_Push = 0x460;
+		constexpr auto engineThrustMax = 0x4E0;
+		constexpr auto torqueScale = 0x4E4;
+		constexpr auto com = 0x4F0;
+		constexpr auto killTriggers = 0x4F8;
+		constexpr auto groundEffects = 0x500;
+		constexpr auto serverGibs = 0x508;
+		constexpr auto explosionEffect = 0x510;
+		constexpr auto fireBall = 0x518;
+		constexpr auto crashEffect = 0x520;
+		constexpr auto liftDotMax = 0x528;
+		constexpr auto altForceDotMin = 0x52C;
+		constexpr auto liftFraction = 0x530;
+		constexpr auto thrustLerpSpeed = 0x534;
+		constexpr auto timeSinceUpdatedGroundEffects = 0x538;
+	};
+
+	namespace BaseCombatEntity {
+		constexpr auto __menuOption_Menu_Pickup = 0x168;
+		constexpr auto skeletonProperties = 0x1E8;
+		constexpr auto baseProtection = 0x1F0;
+		constexpr auto startHealth = 0x1F8;
+		constexpr auto pickup = 0x200;
+		constexpr auto repair = 0x228;
+		constexpr auto ShowHealthInfo = 0x250;
+		constexpr auto lifestate = 0x254;
+		constexpr auto sendsHitNotification = 0x258;
+		constexpr auto sendsMeleeHitNotification = 0x259;
+		constexpr auto markAttackerHostile = 0x25A;
+		constexpr auto _health = 0x25C;
+		constexpr auto _maxHealth = 0x260;
+		constexpr auto faction = 0x264;
+		constexpr auto deathTime = 0x268;
+		constexpr auto lastNotifyFrame = 0x26C;
+	};
+
+	namespace BaseViewModel {
+		constexpr auto HideViewmodelOverride = 0x18;
+		constexpr auto GestureModel = 0x8;
+		constexpr auto ActiveModels = 0x10;
+		constexpr auto lazyaimRegular = 0x20;
+		constexpr auto lazyaimIronsights = 0x28;
+		constexpr auto pivot = 0x30;
+		constexpr auto useViewModelCamera = 0x38;
+		constexpr auto wantsHeldItemFlags = 0x39;
+		constexpr auto hideSightMeshes = 0x40;
+		constexpr auto isGestureViewModel = 0x48;
+		constexpr auto MuzzlePoint = 0x50;
+		constexpr auto subsurfaceProfile = 0x58;
+		constexpr auto animator = 0x60;
+		constexpr auto animationEvent = 0x68;
+		constexpr auto ironSights = 0x70;
+		constexpr auto sway = 0x78;
+		constexpr auto lower = 0x80;
+		constexpr auto bob = 0x88;
+		constexpr auto punch = 0x90;
+		constexpr auto aspectOffset = 0x98;
+		constexpr auto mountedAnchor = 0xA0;
+		constexpr auto model = 0xA8;
+		constexpr auto gestureHide = 0x18;
+		constexpr auto gestureHideTime = 0x1C;
+		constexpr auto gestureCollection = 0x20;
+		constexpr auto aimHelperRoot = 0x28;
+		constexpr auto Skeleton = 0xB0;
+		constexpr auto Clothing = 0xB8;
+		constexpr auto workshopMode = 0xC0;
+		constexpr auto attackHash = 0x30;
+	};
+
+	namespace BaseMelee {
+		constexpr auto damageProperties = 0x280;
+		constexpr auto damageTypes = 0x288;
+		constexpr auto maxDistance = 0x290;
+		constexpr auto attackRadius = 0x294;
+		constexpr auto isAutomatic = 0x298;
+		constexpr auto blockSprintOnAttack = 0x299;
+		constexpr auto canUntieCrates = 0x29A;
+		constexpr auto longResourceForgiveness = 0x29B;
+		constexpr auto strikeFX = 0x2A0;
+		constexpr auto useStandardHitEffects = 0x2A8;
+		constexpr auto aiStrikeDelay = 0x2AC;
+		constexpr auto swingEffect = 0x2B0;
+		constexpr auto materialStrikeFX = 0x2B8;
+		constexpr auto heartStress = 0x2C0;
+		constexpr auto gathering = 0x2C8;
+		constexpr auto throwReady = 0x2D0;
+		constexpr auto canThrowAsProjectile = 0x2D1;
+		constexpr auto canAiHearIt = 0x2D2;
+		constexpr auto onlyThrowAsProjectile = 0x2D3;
+	};
+
+	namespace PlayerWalkMovement {
+		constexpr auto zeroFrictionMaterial = 0x58;
+		constexpr auto highFrictionMaterial = 0x60;
+		constexpr auto capsuleHeight = 0x68;
+		constexpr auto capsuleCenter = 0x6C;
+		constexpr auto capsuleHeightDucked = 0x70;
+		constexpr auto capsuleCenterDucked = 0x74;
+		constexpr auto capsuleHeightCrawling = 0x78;
+		constexpr auto capsuleCenterCrawling = 0x7C;
+		constexpr auto gravityTestRadius = 0x80;
+		constexpr auto gravityMultiplier = 0x84;
+		constexpr auto gravityMultiplierSwimming = 0x88;
+		constexpr auto maxAngleWalking = 0x8C;
+		constexpr auto maxAngleClimbing = 0x90;
+		constexpr auto maxAngleSliding = 0x94;
+		constexpr auto maxStepHeight = 0x98;
+		constexpr auto body = 0xA0;
+		constexpr auto initialColDetectionMode = 0xA8;
+		constexpr auto capsule = 0xB0;
+		constexpr auto ladder = 0xB8;
+		constexpr auto maxVelocity = 0xC0;
+		constexpr auto groundAngle = 0xC4;
+		constexpr auto groundAngleNew = 0xC8;
+		constexpr auto groundTime = 0xCC;
+		constexpr auto jumpTime = 0xD0;
+		constexpr auto landTime = 0xD4;
+		constexpr auto previousPosition = 0xD8;
+		constexpr auto previousVelocity = 0xE4;
+		constexpr auto previousInheritedVelocity = 0xF0;
+		constexpr auto groundNormal = 0xFC;
+		constexpr auto groundNormalNew = 0x108;
+		constexpr auto groundVelocity = 0x114;
+		constexpr auto groundVelocityNew = 0x120;
+		constexpr auto nextSprintTime = 0x12C;
+		constexpr auto lastSprintTime = 0x130;
+		constexpr auto sprintForced = 0x134;
+		constexpr auto attemptedMountTime = 0x138;
+		constexpr auto modify = 0x13C;
+		constexpr auto grounded = 0x140;
+		constexpr auto climbing = 0x141;
+		constexpr auto sliding = 0x142;
+		constexpr auto swimming = 0x143;
+		constexpr auto wasSwimming = 0x144;
+		constexpr auto jumping = 0x145;
+		constexpr auto wasJumping = 0x146;
+		constexpr auto falling = 0x147;
+		constexpr auto wasFalling = 0x148;
+		constexpr auto flying = 0x149;
+		constexpr auto wasFlying = 0x14A;
+		constexpr auto forcedDuckDelta = 0x14C;
+	};
+
+	namespace PlayerEyes {
+		constexpr auto DuckOffset = 0xC;
+		constexpr auto CrawlOffset = 0x18;
+		constexpr auto ParachuteOffset = 0x24;
+		constexpr auto thirdPersonSleepingOffset = 0x20;
+		constexpr auto defaultLazyAim = 0x30;
+		constexpr auto viewOffset = 0x38;
+		constexpr auto bodyRotationk__BackingField = 0x44;
+		constexpr auto headAnglesk__BackingField = 0x54;
+		constexpr auto rotationLookk__BackingField = 0x60;
+		constexpr auto IsAltLookingLegsThresholdk__BackingField = 0x70;
+	};
+
+	namespace PlayerInput {
+		constexpr auto state = 0x20;
+		constexpr auto hadInputBuffer = 0x28;
+		constexpr auto bodyRotation = 0x2C;
+		constexpr auto bodyAngles = 0x3C;
+		constexpr auto headRotation = 0x48;
+		constexpr auto headAngles = 0x58;
+		constexpr auto recoilAngles = 0x64;
+		constexpr auto viewDelta = 0x70;
+		constexpr auto headLerp = 0x78;
+		constexpr auto mouseWheelUp = 0x7C;
+		constexpr auto mouseWheelDn = 0x80;
+		constexpr auto autorun = 0x84;
+		constexpr auto toggleDuck = 0x85;
+		constexpr auto toggleAds = 0x86;
+		constexpr auto lastAdsEntity = 0x88;
+		constexpr auto pendingMouseDelta = 0x90;
+		constexpr auto offsetAngles = 0x9C;
+		constexpr auto ignoredButtons = 0xA8;
+		constexpr auto hasKeyFocus = 0xAC;
+	};
+
+	namespace PlayerInventory {
+		constexpr auto containerMain = 0x20;
+		constexpr auto containerBelt = 0x28;
+		constexpr auto containerWear = 0x30;
+		constexpr auto crafting = 0x38;
+		constexpr auto loot = 0x40;
+	};
+
+	namespace PlayerModel {
+		constexpr auto acceleration = 0x4;
+		constexpr auto rotationYaw = 0x8;
+		constexpr auto forward = 0xC;
+		constexpr auto right = 0x10;
+		constexpr auto up = 0x14;
+		constexpr auto ducked = 0x18;
+		constexpr auto grounded = 0x1C;
+		constexpr auto crawling = 0x20;
+		constexpr auto waterlevel = 0x24;
+		constexpr auto attack = 0x28;
+		constexpr auto attack_alt = 0x2C;
+		constexpr auto deploy = 0x30;
+		constexpr auto turnOn = 0x34;
+		constexpr auto turnOff = 0x38;
+		constexpr auto reload = 0x3C;
+		constexpr auto throwWeapon = 0x40;
+		constexpr auto holster = 0x44;
+		constexpr auto aiming = 0x48;
+		constexpr auto onLadder = 0x4C;
+		constexpr auto posing = 0x50;
+		constexpr auto poseType = 0x54;
+		constexpr auto relaxGunPose = 0x58;
+		constexpr auto vehicle_aim_yaw = 0x5C;
+		constexpr auto vehicle_aim_speed = 0x60;
+		constexpr auto usePoseTransition = 0x64;
+		constexpr auto onPhone = 0x68;
+		constexpr auto leftFootIK = 0x6C;
+		constexpr auto rightFootIK = 0x70;
+		constexpr auto vehicleSteering = 0x74;
+		constexpr auto sitReaction = 0x78;
+		constexpr auto forwardReaction = 0x7C;
+		constexpr auto rightReaction = 0x80;
+		constexpr auto ladderType = 0x84;
+		constexpr auto hasParachute = 0x88;
+		constexpr auto nonGroundedTime = 0x8C;
+		constexpr auto deployParachuteTrigger = 0x90;
+		constexpr auto collision = 0x18;
+		constexpr auto censorshipCube = 0x20;
+		constexpr auto censorshipCubeBreasts = 0x28;
+		constexpr auto jawBone = 0x30;
+		constexpr auto neckBone = 0x38;
+		constexpr auto headBone = 0x40;
+		constexpr auto eyeController = 0x48;
+		constexpr auto blinkController = 0x50;
+		constexpr auto SpineBones = 0x58;
+		constexpr auto leftFootBone = 0x60;
+		constexpr auto rightFootBone = 0x68;
+		constexpr auto leftHandPropBone = 0x70;
+		constexpr auto rightHandPropBone = 0x78;
+		constexpr auto rightHandTarget = 0x80;
+		constexpr auto leftHandTargetPosition = 0x8C;
+		constexpr auto leftHandTargetRotation = 0x98;
+		constexpr auto rightHandTargetPosition = 0xA8;
+		constexpr auto rightHandTargetRotation = 0xB4;
+		constexpr auto steeringTargetDegrees = 0xC4;
+		constexpr auto rightFootTargetPosition = 0xC8;
+		constexpr auto rightFootTargetRotation = 0xD4;
+		constexpr auto leftFootTargetPosition = 0xE4;
+		constexpr auto leftFootTargetRotation = 0xF0;
+		constexpr auto CinematicAnimationController = 0x100;
+		constexpr auto DefaultAvatar = 0x108;
+		constexpr auto CinematicAvatar = 0x110;
+		constexpr auto DefaultHoldType = 0x118;
+		constexpr auto SleepGesture = 0x120;
+		constexpr auto CrawlToIncapacitatedGesture = 0x128;
+		constexpr auto StandToIncapacitatedGesture = 0x130;
+		constexpr auto CurrentGesture = 0x138;
+		constexpr auto MaleSkin = 0x140;
+		constexpr auto FemaleSkin = 0x148;
+		constexpr auto subsurfaceProfile = 0x150;
+		constexpr auto voiceVolume = 0x158;
+		constexpr auto skinColor = 0x15C;
+		constexpr auto skinNumber = 0x160;
+		constexpr auto meshNumber = 0x164;
+		constexpr auto hairNumber = 0x168;
+		constexpr auto skinType = 0x16C;
+		constexpr auto movementSounds = 0x170;
+		constexpr auto showSash = 0x178;
+		constexpr auto tempPoseType = 0x17C;
+		constexpr auto underwearSkin = 0x180;
+		constexpr auto overrideSkinSeedk__BackingField = 0x188;
+		constexpr auto AimAnglesk__BackingField = 0x190;
+		constexpr auto LookAnglesk__BackingField = 0x1A0;
+		constexpr auto modelState = 0x1B0;
+		constexpr auto position = 0x1B8;
+		constexpr auto velocity = 0x1C4;
+		constexpr auto speedOverride = 0x1D0;
+		constexpr auto newVelocity = 0x1DC;
+		constexpr auto rotation = 0x1E8;
+		constexpr auto mountedRotation = 0x1F8;
+		constexpr auto fallingTime = 0x208;
+		constexpr auto smoothLeftFootIK = 0x20C;
+		constexpr auto smoothRightFootIK = 0x218;
+		constexpr auto drawShadowOnly = 0x224;
+		constexpr auto isIncapacitated = 0x225;
+		constexpr auto flinchLocation = 0x228;
+		constexpr auto visible = 0x22C;
+		constexpr auto nameTag = 0x230;
+		constexpr auto animatorNeedsWarmup = 0x238;
+		constexpr auto isLocalPlayer = 0x239;
+		constexpr auto aimSoundDef = 0x240;
+		constexpr auto aimEndSoundDef = 0x248;
+		constexpr auto InGesture = 0x250;
+		constexpr auto CurrentGestureConfig = 0x258;
+		constexpr auto InCinematic = 0x260;
+		constexpr auto defaultAnimatorController = 0x268;
+		constexpr auto _multiMesh = 0x270;
+		constexpr auto _animator = 0x278;
+		constexpr auto _lodGroup = 0x280;
+		constexpr auto _currentGesture = 0x288;
+		constexpr auto holdTypeLock = 0x290;
+		constexpr auto hasHeldEntity = 0x294;
+		constexpr auto wasMountedRightAim = 0x295;
+		constexpr auto cachedMask = 0x298;
+		constexpr auto cachedConstructionMask = 0x29C;
+		constexpr auto WorkshopHeldEntity = 0x2A0;
+		constexpr auto wasCrawling = 0x2A8;
+		constexpr auto mountedSpineLookWeight = 0x2AC;
+		constexpr auto mountedAnimSpeed = 0x2B0;
+		constexpr auto preserveBones = 0x2B4;
+		constexpr auto downLimitOverride = 0x2B8;
+		constexpr auto blendShapeControllers = 0x2C0;
+		constexpr auto IsNpck__BackingField = 0x2C8;
+		constexpr auto timeSinceReactionStart = 0x2CC;
+		constexpr auto timeSinceLeftFootTest = 0x2D0;
+		constexpr auto cachedLeftFootPos = 0x2D4;
+		constexpr auto cachedLeftFootNormal = 0x2E0;
+		constexpr auto timeSinceRightFootTest = 0x2EC;
+		constexpr auto cachedRightFootPos = 0x2F0;
+		constexpr auto cachedRightFootNormal = 0x2FC;
+		constexpr auto pm_uplimit = 0x94;
+		constexpr auto pm_downlimit = 0x98;
+		constexpr auto pm_upspine = 0x9C;
+		constexpr auto pm_downspine = 0xA0;
+		constexpr auto pm_lookoffset = 0xA4;
+		constexpr auto pm_anglesmoothspeed = 0xB0;
+		constexpr auto pm_nohold = 0xB4;
+		constexpr auto pm_ladder = 0xB8;
+		constexpr auto pm_minweight = 0xBC;
+		constexpr auto _smoothAimWeight = 0x308;
+		constexpr auto _smoothVelocity = 0x30C;
+		constexpr auto _smoothlookAngle = 0x310;
+		constexpr auto allowMountedHeadLook = 0x31C;
+		constexpr auto overrideLeftHandIkWeight = 0x320;
+		constexpr auto overrideRightHandIkWeight = 0x324;
+		constexpr auto smoothLookDir = 0x328;
+		constexpr auto lastSafeLookDir = 0x334;
+		constexpr auto Shoulders = 0x340;
+		constexpr auto AdditionalSpineBones = 0x348;
+		constexpr auto FinishedLegWearables = 0xC0;
+		constexpr auto LegParts = 0x350;
+		constexpr auto fakeSpineBones = 0x358;
+		constexpr auto extraLeanBack = 0x360;
+		constexpr auto drawState = 0x364;
+		constexpr auto timeInArmsMode = 0x368;
+	};
+
+	namespace Projectile {
+		constexpr auto initialVelocity = 0x18;
+		constexpr auto drag = 0x24;
+		constexpr auto gravityModifier = 0x28;
+		constexpr auto thickness = 0x2C;
+		constexpr auto initialDistance = 0x30;
+		constexpr auto remainInWorld = 0x34;
+		constexpr auto stickProbability = 0x38;
+		constexpr auto breakProbability = 0x3C;
+		constexpr auto conditionLoss = 0x40;
+		constexpr auto ricochetChance = 0x44;
+		constexpr auto penetrationPower = 0x48;
+		constexpr auto waterIntegrityLoss = 0x4C;
+		constexpr auto damageProperties = 0x50;
+		constexpr auto damageDistances = 0x58;
+		constexpr auto damageMultipliers = 0x60;
+		constexpr auto damageTypes = 0x68;
+		constexpr auto rendererToScale = 0x70;
+		constexpr auto firstPersonRenderer = 0x78;
+		constexpr auto createDecals = 0x80;
+		constexpr auto doDefaultHitEffects = 0x81;
+		constexpr auto flybySound = 0x88;
+		constexpr auto flybySoundDistance = 0x90;
+		constexpr auto closeFlybySound = 0x98;
+		constexpr auto closeFlybyDistance = 0xA0;
+		constexpr auto tumbleSpeed = 0xA4;
+		constexpr auto tumbleAxis = 0xA8;
+		constexpr auto swimScale = 0xB4;
+		constexpr auto swimSpeed = 0xC0;
+		constexpr auto owner = 0xD0;
+		constexpr auto sourceWeaponPrefab = 0xD8;
+		constexpr auto sourceProjectilePrefab = 0xE0;
+		constexpr auto mod = 0xE8;
+		constexpr auto projectileID = 0xF0;
+		constexpr auto seed = 0xF4;
+		constexpr auto clientsideEffect = 0xF8;
+		constexpr auto clientsideAttack = 0xF9;
+		constexpr auto integrity = 0xFC;
+		constexpr auto maxDistance = 0x100;
+		constexpr auto modifier = 0x104;
+		constexpr auto invisible = 0x114;
+		constexpr auto currentVelocity = 0x118;
+		constexpr auto currentPosition = 0x124;
+		constexpr auto traveledDistance = 0x130;
+		constexpr auto traveledTime = 0x134;
+		constexpr auto launchTime = 0x138;
+		constexpr auto sentPosition = 0x13C;
+		constexpr auto previousPosition = 0x148;
+		constexpr auto previousVelocity = 0x154;
+		constexpr auto previousTraveledTime = 0x160;
+		constexpr auto isUnderwater = 0x164;
+		constexpr auto isRicochet = 0x165;
+		constexpr auto isRetiring = 0x166;
+		constexpr auto flybyPlayed = 0x167;
+		constexpr auto wasFacingPlayer = 0x168;
+		constexpr auto flybyPlane = 0x16C;
+		constexpr auto flybyRay = 0x17C;
+		constexpr auto cleanupAction = 0x198;
+		constexpr auto hitTest = 0x1A0;
+		constexpr auto swimRandom = 0x1A8;
+		constexpr auto _waterMaterialID = 0x4;
+		constexpr auto cachedWaterString = 0x8;
+	};
+
+	namespace ModelState {
+		constexpr auto waterLevel = 0x10;
+		constexpr auto lookDir = 0x14;
+		constexpr auto flags = 0x20;
+		constexpr auto poseType = 0x24;
+		constexpr auto inheritedVelocity = 0x28;
+		constexpr auto ladderType = 0x34;
+		constexpr auto ShouldPool = 0x38;
+		constexpr auto _disposed = 0x39;
+	};
+
+	namespace ItemModProjectile {
+		constexpr auto projectileObject = 0x18;
+		constexpr auto mods = 0x20;
+		constexpr auto ammoType = 0x28;
+		constexpr auto numProjectiles = 0x2C;
+		constexpr auto projectileSpread = 0x30;
+		constexpr auto projectileVelocity = 0x34;
+		constexpr auto projectileVelocitySpread = 0x38;
+		constexpr auto useCurve = 0x3C;
+		constexpr auto spreadScalar = 0x40;
+		constexpr auto attackEffectOverride = 0x48;
+		constexpr auto barrelConditionLoss = 0x50;
+		constexpr auto category = 0x58;
+	};
+
+	namespace ItemContainer {
+		constexpr auto flags = 0x10;
+		constexpr auto allowedContents = 0x14;
+		constexpr auto onlyAllowedItems = 0x18;
+		constexpr auto availableSlots = 0x20;
+		constexpr auto capacity = 0x28;
+		constexpr auto uid = 0x30;
+		constexpr auto dirty = 0x38;
+		constexpr auto itemList = 0x40;
+		constexpr auto temperature = 0x48;
+		constexpr auto parent = 0x50;
+		constexpr auto playerOwner = 0x58;
+		constexpr auto entityOwner = 0x60;
+		constexpr auto isServer = 0x68;
+		constexpr auto maxStackSize = 0x6C;
+	};
+
+	namespace ItemDefinition {
+		constexpr auto itemid = 0x18;
+		constexpr auto shortname = 0x20;
+		constexpr auto displayName = 0x28;
+		constexpr auto displayDescription = 0x30;
+		constexpr auto iconSprite = 0x38;
+		constexpr auto category = 0x40;
+		constexpr auto selectionPanel = 0x44;
+		constexpr auto maxDraggable = 0x48;
+		constexpr auto itemType = 0x4C;
+		constexpr auto amountType = 0x50;
+		constexpr auto occupySlots = 0x54;
+		constexpr auto stackable = 0x58;
+		constexpr auto quickDespawn = 0x5C;
+		constexpr auto rarity = 0x60;
+		constexpr auto despawnRarity = 0x64;
+		constexpr auto spawnAsBlueprint = 0x68;
+		constexpr auto inventoryGrabSound = 0x70;
+		constexpr auto inventoryDropSound = 0x78;
+		constexpr auto physImpactSoundDef = 0x80;
+		constexpr auto condition = 0x88;
+		constexpr auto hidden = 0xA0;
+		constexpr auto flags = 0xA4;
+		constexpr auto steamItem = 0xA8;
+		constexpr auto steamDlc = 0xB0;
+		constexpr auto Parent = 0xB8;
+		constexpr auto worldModelPrefab = 0xC0;
+		constexpr auto worldModelOverrides = 0xC8;
+		constexpr auto treatAsComponentForRepairs = 0xD0;
+		constexpr auto isRedirectOf = 0xD8;
+		constexpr auto redirectVendingBehaviour = 0xE0;
+		constexpr auto itemMods = 0xE8;
+		constexpr auto Traits = 0xF0;
+		constexpr auto skins = 0xF8;
+		constexpr auto _skins2 = 0x100;
+		constexpr auto panel = 0x108;
+		constexpr auto ItemModWearablek__BackingField = 0x110;
+		constexpr auto isHoldablek__BackingField = 0x118;
+		constexpr auto isUsablek__BackingField = 0x119;
+		constexpr auto CraftableWithSkink__BackingField = 0x11A;
+		constexpr auto Children = 0x120;
+	};
+
+	namespace Item {
+		constexpr auto _condition = 0x10;
+		constexpr auto _maxCondition = 0x14;
+		constexpr auto info = 0x18;
+		constexpr auto uid = 0x20;
+		constexpr auto dirty = 0x28;
+		constexpr auto amount = 0x2C;
+		constexpr auto position = 0x30;
+		constexpr auto busyTime = 0x34;
+		constexpr auto removeTime = 0x38;
+		constexpr auto fuel = 0x3C;
+		constexpr auto isServer = 0x40;
+		constexpr auto instanceData = 0x48;
+		constexpr auto skin = 0x50;
+		constexpr auto name = 0x58;
+		constexpr auto streamerName = 0x60;
+		constexpr auto text = 0x68;
+		constexpr auto ammoCountk__BackingField = 0x70;
+		constexpr auto cookTimeLeft = 0x78;
+		constexpr auto progressBar = 0x7C;
+		constexpr auto OnDirty = 0x80;
+		constexpr auto flags = 0x88;
+		constexpr auto contents = 0x90;
+		constexpr auto parent = 0x98;
+		constexpr auto worldEnt = 0xA0;
+		constexpr auto heldEntity = 0xB0;
+		constexpr auto amountOverride = 0xC0;
+	};
+
+	namespace FlintStrikeWeapon {
+		constexpr auto successFraction = 0x3A0;
+		constexpr auto strikeRecoil = 0x3A8;
+		constexpr auto _didSparkThisFrame = 0x3B0;
+		constexpr auto _isStriking = 0x3B1;
+		constexpr auto strikes = 0x3B4;
+		constexpr auto lastSpectatorAttack = 0x3B8;
+	};
+
+	namespace Model {
+		constexpr auto collision = 0x18;
+		constexpr auto rootBone = 0x20;
+		constexpr auto headBone = 0x28;
+		constexpr auto eyeBone = 0x30;
+		constexpr auto animator = 0x38;
+		constexpr auto skeleton = 0x40;
+		constexpr auto boneTransforms = 0x48;
+		constexpr auto boneNames = 0x50;
+		constexpr auto boneDict = 0x58;
+		constexpr auto skin = 0x60;
+		constexpr auto _lodGroup = 0x68;
+	};
+
+	namespace ViewModel {
+		constexpr auto viewModelPrefab = 0x18;
+		constexpr auto targetEntity = 0x20;
+		constexpr auto instance = 0x28;
+	};
+
+	namespace BowWeapon {
+		constexpr auto attackReady = 0x3A0;
+		constexpr auto arrowBack = 0x3A4;
+		constexpr auto swapArrows = 0x3A8;
+		constexpr auto wasAiming = 0x3B0;
+	};
+
+	namespace AttackEntity {
+		constexpr auto deployDelay = 0x1F8;
+		constexpr auto repeatDelay = 0x1FC;
+		constexpr auto animationDelay = 0x200;
+		constexpr auto effectiveRange = 0x204;
+		constexpr auto npcDamageScale = 0x208;
+		constexpr auto attackLengthMin = 0x20C;
+		constexpr auto attackLengthMax = 0x210;
+		constexpr auto attackSpacing = 0x214;
+		constexpr auto aiAimSwayOffset = 0x218;
+		constexpr auto aiAimCone = 0x21C;
+		constexpr auto aiOnlyInRange = 0x220;
+		constexpr auto CloseRangeAddition = 0x224;
+		constexpr auto MediumRangeAddition = 0x228;
+		constexpr auto LongRangeAddition = 0x22C;
+		constexpr auto CanUseAtMediumRange = 0x230;
+		constexpr auto CanUseAtLongRange = 0x231;
+		constexpr auto reloadSounds = 0x238;
+		constexpr auto thirdPersonMeleeSound = 0x240;
+		constexpr auto recoilCompDelayOverride = 0x248;
+		constexpr auto wantsRecoilComp = 0x24C;
+		constexpr auto nextAttackTime = 0x250;
+		constexpr auto lastTickTime = 0x254;
+		constexpr auto nextTickTime = 0x258;
+		constexpr auto timeSinceDeploy = 0x25C;
+		constexpr auto lastRecoilCompTime = 0x260;
+		constexpr auto startAimingDirection = 0x264;
+		constexpr auto wasDoingRecoilComp = 0x270;
+		constexpr auto reductionSpeed = 0x274;
+	};
+
+	namespace HitTest {
+		constexpr auto type = 0x10;
+		constexpr auto AttackRay = 0x14;
+		constexpr auto Radius = 0x2C;
+		constexpr auto Forgiveness = 0x30;
+		constexpr auto MaxDistance = 0x34;
+		constexpr auto RayHit = 0x38;
+		constexpr auto MultiHit = 0x64;
+		constexpr auto BestHit = 0x65;
+		constexpr auto DidHit = 0x66;
+		constexpr auto damageProperties = 0x68;
+		constexpr auto gameObject = 0x70;
+		constexpr auto collider = 0x78;
+		constexpr auto ignoreEntity = 0x80;
+		constexpr auto HitEntity = 0x88;
+		constexpr auto HitPoint = 0x90;
+		constexpr auto HitNormal = 0x9C;
+		constexpr auto HitDistance = 0xA8;
+		constexpr auto HitTransform = 0xB0;
+		constexpr auto HitPart = 0xB8;
+		constexpr auto HitMaterial = 0xC0;
+	};
+
+	namespace HitInfo {
+		constexpr auto Initiator = 0x10;
+		constexpr auto WeaponPrefab = 0x18;
+		constexpr auto Weapon = 0x20;
+		constexpr auto DoHitEffects = 0x28;
+		constexpr auto DoDecals = 0x29;
+		constexpr auto IsPredicting = 0x2A;
+		constexpr auto UseProtection = 0x2B;
+		constexpr auto Predicted = 0x30;
+		constexpr auto DidHit = 0x38;
+		constexpr auto HitEntity = 0x40;
+		constexpr auto HitBone = 0x48;
+		constexpr auto HitPart = 0x4C;
+		constexpr auto HitMaterial = 0x50;
+		constexpr auto HitPositionWorld = 0x54;
+		constexpr auto HitPositionLocal = 0x60;
+		constexpr auto HitNormalWorld = 0x6C;
+		constexpr auto HitNormalLocal = 0x78;
+		constexpr auto PointStart = 0x84;
+		constexpr auto PointEnd = 0x90;
+		constexpr auto ProjectileID = 0x9C;
+		constexpr auto ProjectileHits = 0xA0;
+		constexpr auto ProjectileDistance = 0xA4;
+		constexpr auto ProjectileIntegrity = 0xA8;
+		constexpr auto ProjectileTravelTime = 0xAC;
+		constexpr auto ProjectileTrajectoryMismatch = 0xB0;
+		constexpr auto ProjectileVelocity = 0xB4;
+		constexpr auto ProjectilePrefab = 0xC0;
+		constexpr auto material = 0xC8;
+		constexpr auto damageProperties = 0xD0;
+		constexpr auto damageTypes = 0xD8;
+		constexpr auto CanGather = 0xE0;
+		constexpr auto DidGather = 0xE1;
+		constexpr auto gatherScale = 0xE4;
+	};
+
+	namespace GamePhysics {
+		constexpr auto hitBufferB = 0x8;
+		constexpr auto colBuffer = 0x10;
+	};
+
+	namespace GameTrace {
+	};
+
+	namespace Door {
+		constexpr auto __menuOption_Menu_CloseDoor = 0x2A8;
+		constexpr auto __menuOption_Menu_KnockDoor = 0x328;
+		constexpr auto __menuOption_Menu_OpenDoor = 0x3A8;
+		constexpr auto __menuOption_Menu_ToggleHatch = 0x428;
+		constexpr auto knockEffect = 0x4A8;
+		constexpr auto canTakeLock = 0x4B0;
+		constexpr auto hasHatch = 0x4B1;
+		constexpr auto canTakeCloser = 0x4B2;
+		constexpr auto canTakeKnocker = 0x4B3;
+		constexpr auto canNpcOpen = 0x4B4;
+		constexpr auto canHandOpen = 0x4B5;
+		constexpr auto isSecurityDoor = 0x4B6;
+		constexpr auto canReverseOpen = 0x4B7;
+		constexpr auto vehiclePhysBoxes = 0x4B8;
+		constexpr auto checkPhysBoxesOnOpen = 0x4C0;
+		constexpr auto vehicleCollisionSfx = 0x4C8;
+		constexpr auto ClosedColliderRoots = 0x4D0;
+		constexpr auto openAnimLength = 0x4D8;
+		constexpr auto closeAnimLength = 0x4DC;
+		constexpr auto closeHash = 0x4;
+		constexpr auto reverseOpenHash = 0x8;
+	};
+
+	namespace RecoilProperties {
+		constexpr auto recoilYawMin = 0x18;
+		constexpr auto recoilYawMax = 0x1C;
+		constexpr auto recoilPitchMin = 0x20;
+		constexpr auto recoilPitchMax = 0x24;
+		constexpr auto timeToTakeMin = 0x28;
+		constexpr auto timeToTakeMax = 0x2C;
+		constexpr auto ADSScale = 0x30;
+		constexpr auto movementPenalty = 0x34;
+		constexpr auto clampPitch = 0x38;
+		constexpr auto pitchCurve = 0x40;
+		constexpr auto yawCurve = 0x48;
+		constexpr auto useCurves = 0x50;
+		constexpr auto curvesAsScalar = 0x51;
+		constexpr auto shotsUntilMax = 0x54;
+		constexpr auto maxRecoilRadius = 0x58;
+		constexpr auto overrideAimconeWithCurve = 0x5C;
+		constexpr auto aimconeCurveScale = 0x60;
+		constexpr auto aimconeCurve = 0x68;
+		constexpr auto aimconeProbabilityCurve = 0x70;
+		constexpr auto ammoAimconeScaleMultiProjectile = 0x78;
+		constexpr auto ammoAimconeScaleSingleProjectile = 0x7C;
+		constexpr auto newRecoilOverride = 0x80;
+	};
+
+	namespace MedicalTool {
+		constexpr auto healDurationSelf = 0x280;
+		constexpr auto healDurationOther = 0x284;
+		constexpr auto healDurationOtherWounded = 0x288;
+		constexpr auto maxDistanceOther = 0x28C;
+		constexpr auto canUseOnOther = 0x290;
+		constexpr auto canRevive = 0x291;
+		constexpr auto useTarget = 0x298;
+		constexpr auto resetTime = 0x2A0;
+	};
+
+	namespace HeldEntity {
+		constexpr auto worldModelAnimator = 0x168;
+		constexpr auto thirdPersonDeploySound = 0x170;
+		constexpr auto thirdPersonAimSound = 0x178;
+		constexpr auto thirdPersonAimEndSound = 0x180;
+		constexpr auto viewModel = 0x188;
+		constexpr auto isDeployed = 0x190;
+		constexpr auto nextExamineTime = 0x194;
+		constexpr auto handBone = 0x198;
+		constexpr auto HoldAnimationOverride = 0x1A0;
+		constexpr auto isBuildingTool = 0x1A8;
+		constexpr auto hostileScore = 0x1AC;
+		constexpr auto holsterInfo = 0x1B0;
+		constexpr auto HeldCameraMode = 0x1B8;
+		constexpr auto FirstPersonArmOffset = 0x1BC;
+		constexpr auto FirstPersonArmRotation = 0x1C8;
+		constexpr auto FirstPersonRotationStrength = 0x1D4;
+		constexpr auto ownerItemUID = 0x1D8;
+		constexpr auto _punches = 0x1E0;
+		constexpr auto punchAdded = 0x1E8;
+		constexpr auto lastPunchTime = 0x1F4;
+	};
+
+	namespace InputState {
+		constexpr auto current = 0x10;
+		constexpr auto previous = 0x18;
+		constexpr auto SwallowedButtons = 0x20;
+	};
+
+	namespace InputMessage {
+		constexpr auto buttons = 0x10;
+		constexpr auto aimAngles = 0x14;
+		constexpr auto mouseDelta = 0x20;
+		constexpr auto ShouldPool = 0x2C;
+		constexpr auto _disposed = 0x2D;
+	};
+
+	namespace TOD_Sky {
+		constexpr auto ColorSpace = 0x18;
+		constexpr auto ColorRange = 0x1C;
+		constexpr auto ColorOutput = 0x20;
+		constexpr auto SkyQuality = 0x24;
+		constexpr auto CloudQuality = 0x28;
+		constexpr auto MeshQuality = 0x2C;
+		constexpr auto StarQuality = 0x30;
+		constexpr auto Cycle = 0x38;
+		constexpr auto World = 0x40;
+		constexpr auto Atmosphere = 0x48;
+		constexpr auto Day = 0x50;
+		constexpr auto Night = 0x58;
+		constexpr auto Sun = 0x60;
+		constexpr auto Moon = 0x68;
+		constexpr auto Stars = 0x70;
+		constexpr auto Clouds = 0x78;
+		constexpr auto Light = 0x80;
+		constexpr auto Fog = 0x88;
+		constexpr auto Ambient = 0x90;
+		constexpr auto Reflection = 0x98;
+		constexpr auto Initializedk__BackingField = 0xA0;
+		constexpr auto Componentsk__BackingField = 0xA8;
+		constexpr auto Resourcesk__BackingField = 0xB0;
+		constexpr auto IsDayk__BackingField = 0xB8;
+		constexpr auto IsNightk__BackingField = 0xB9;
+		constexpr auto LerpValuek__BackingField = 0xBC;
+		constexpr auto SunZenithk__BackingField = 0xC0;
+		constexpr auto SunAltitudek__BackingField = 0xC4;
+		constexpr auto SunAzimuthk__BackingField = 0xC8;
+		constexpr auto MoonZenithk__BackingField = 0xCC;
+		constexpr auto MoonAltitudek__BackingField = 0xD0;
+		constexpr auto MoonAzimuthk__BackingField = 0xD4;
+		constexpr auto SunsetTimek__BackingField = 0xD8;
+		constexpr auto SunriseTimek__BackingField = 0xDC;
+		constexpr auto LocalSiderealTimek__BackingField = 0xE0;
+		constexpr auto SunVisibilityk__BackingField = 0xE4;
+		constexpr auto MoonVisibilityk__BackingField = 0xE8;
+		constexpr auto SunDirectionk__BackingField = 0xEC;
+		constexpr auto MoonDirectionk__BackingField = 0xF8;
+		constexpr auto LightDirectionk__BackingField = 0x104;
+		constexpr auto LocalSunDirectionk__BackingField = 0x110;
+		constexpr auto LocalMoonDirectionk__BackingField = 0x11C;
+		constexpr auto LocalLightDirectionk__BackingField = 0x128;
+		constexpr auto SunLightColork__BackingField = 0x134;
+		constexpr auto MoonLightColork__BackingField = 0x144;
+		constexpr auto SunRayColork__BackingField = 0x154;
+		constexpr auto MoonRayColork__BackingField = 0x164;
+		constexpr auto SunSkyColork__BackingField = 0x174;
+		constexpr auto MoonSkyColork__BackingField = 0x184;
+		constexpr auto SunMeshColork__BackingField = 0x194;
+		constexpr auto MoonMeshColork__BackingField = 0x1A4;
+		constexpr auto SunCloudColork__BackingField = 0x1B4;
+		constexpr auto MoonCloudColork__BackingField = 0x1C4;
+		constexpr auto FogColork__BackingField = 0x1D4;
+		constexpr auto GroundColork__BackingField = 0x1E4;
+		constexpr auto AmbientColork__BackingField = 0x1F4;
+		constexpr auto MoonHaloColork__BackingField = 0x204;
+		constexpr auto ReflectionCur = 0x218;
+		constexpr auto ReflectionSrc = 0x220;
+		constexpr auto ReflectionDst = 0x228;
+		constexpr auto ReflectionUpdateSpeed = 0x8;
+		constexpr auto ReflectionResolution = 0xC;
+		constexpr auto ReflectionUpdateInterval = 0x10;
+		constexpr auto ReflectionTimeSlicing = 0x14;
+		constexpr auto timeSinceLightUpdate = 0x230;
+		constexpr auto timeSinceAmbientUpdate = 0x234;
+		constexpr auto timeSinceReflectionUpdate = 0x238;
+		constexpr auto kBetaMie = 0x23C;
+		constexpr auto kSun = 0x248;
+		constexpr auto k4PI = 0x258;
+		constexpr auto kRadius = 0x268;
+		constexpr auto kScale = 0x278;
+	};
+
+	namespace TOD_AtmosphereParameters {
+		constexpr auto RayleighMultiplier = 0x10;
+		constexpr auto MieMultiplier = 0x14;
+		constexpr auto Brightness = 0x18;
+		constexpr auto Contrast = 0x1C;
+		constexpr auto Directionality = 0x20;
+		constexpr auto Fogginess = 0x24;
+	};
+
+	namespace TOD_MoonParameters {
+		constexpr auto MeshSize = 0x10;
+		constexpr auto MeshBrightness = 0x14;
+		constexpr auto MeshContrast = 0x18;
+		constexpr auto HaloSize = 0x1C;
+		constexpr auto HaloBrightness = 0x20;
+		constexpr auto Position = 0x24;
+	};
+
+	namespace TOD_CloudParameters {
+		constexpr auto Size = 0x10;
+		constexpr auto Opacity = 0x14;
+		constexpr auto Coverage = 0x18;
+		constexpr auto Sharpness = 0x1C;
+		constexpr auto Coloring = 0x20;
+		constexpr auto Attenuation = 0x24;
+		constexpr auto Saturation = 0x28;
+		constexpr auto Scattering = 0x2C;
+		constexpr auto Brightness = 0x30;
+	};
+
+	namespace TOD_NightParameters {
+		constexpr auto MoonColor = 0x10;
+		constexpr auto LightColor = 0x18;
+		constexpr auto RayColor = 0x20;
+		constexpr auto SkyColor = 0x28;
+		constexpr auto CloudColor = 0x30;
+		constexpr auto FogColor = 0x38;
+		constexpr auto AmbientColor = 0x40;
+		constexpr auto LightIntensity = 0x48;
+		constexpr auto ShadowStrength = 0x4C;
+		constexpr auto AmbientMultiplier = 0x50;
+		constexpr auto ReflectionMultiplier = 0x54;
+	};
+
+	namespace ProtoBuf_Attack {
+		constexpr auto pointStart = 0x10;
+		constexpr auto pointEnd = 0x1C;
+		constexpr auto hitID = 0x28;
+		constexpr auto hitBone = 0x30;
+		constexpr auto hitNormalLocal = 0x34;
+		constexpr auto hitPositionLocal = 0x40;
+		constexpr auto hitNormalWorld = 0x4C;
+		constexpr auto hitPositionWorld = 0x58;
+		constexpr auto hitPartID = 0x64;
+		constexpr auto hitMaterialID = 0x68;
+		constexpr auto srcParentID = 0x70;
+		constexpr auto dstParentID = 0x78;
+		constexpr auto ShouldPool = 0x80;
+		constexpr auto _disposed = 0x81;
+	};
+
+	namespace ProtoBuf_PlayerTeam {
+		constexpr auto teamID = 0x10;
+		constexpr auto teamName = 0x18;
+		constexpr auto teamLeader = 0x20;
+		constexpr auto members = 0x28;
+		constexpr auto teamLifetime = 0x30;
+		constexpr auto leaderMapNotes = 0x38;
+		constexpr auto teamPings = 0x40;
+		constexpr auto ShouldPool = 0x48;
+		constexpr auto _disposed = 0x49;
+	};
+
+	namespace ProtoBuf_PlayerProjectileUpdate {
+		constexpr auto projectileID = 0x10;
+		constexpr auto curPosition = 0x14;
+		constexpr auto curVelocity = 0x20;
+		constexpr auto travelTime = 0x2C;
+		constexpr auto ShouldPool = 0x30;
+		constexpr auto _disposed = 0x31;
+	};
+
+	namespace UnityEngine_GUI {
+		constexpr auto s_BoxHash = 0x4;
+		constexpr auto s_ButonHash = 0x8;
+		constexpr auto s_RepeatButtonHash = 0xC;
+		constexpr auto s_ToggleHash = 0x10;
+		constexpr auto s_ButtonGridHash = 0x14;
+		constexpr auto s_SliderHash = 0x18;
+		constexpr auto s_BeginGroupHash = 0x1C;
+		constexpr auto s_ScrollviewHash = 0x20;
+		constexpr auto scrollTroughSidek__BackingField = 0x24;
+		constexpr auto nextScrollStepTimek__BackingField = 0x28;
+		constexpr auto s_Skin = 0x30;
+		constexpr auto s_ToolTipRect = 0x38;
+		constexpr auto scrollViewStatesk__BackingField = 0x48;
+	};
+
+	namespace UnityEngine_GUISkin {
+		constexpr auto m_Font = 0x18;
+		constexpr auto m_box = 0x20;
+		constexpr auto m_button = 0x28;
+		constexpr auto m_toggle = 0x30;
+		constexpr auto m_label = 0x38;
+		constexpr auto m_textField = 0x40;
+		constexpr auto m_textArea = 0x48;
+		constexpr auto m_window = 0x50;
+		constexpr auto m_horizontalSlider = 0x58;
+		constexpr auto m_horizontalSliderThumb = 0x60;
+		constexpr auto m_horizontalSliderThumbExtent = 0x68;
+		constexpr auto m_verticalSlider = 0x70;
+		constexpr auto m_verticalSliderThumb = 0x78;
+		constexpr auto m_verticalSliderThumbExtent = 0x80;
+		constexpr auto m_SliderMixed = 0x88;
+		constexpr auto m_horizontalScrollbar = 0x90;
+		constexpr auto m_horizontalScrollbarThumb = 0x98;
+		constexpr auto m_horizontalScrollbarLeftButton = 0xA0;
+		constexpr auto m_horizontalScrollbarRightButton = 0xA8;
+		constexpr auto m_verticalScrollbar = 0xB0;
+		constexpr auto m_verticalScrollbarThumb = 0xB8;
+		constexpr auto m_verticalScrollbarUpButton = 0xC0;
+		constexpr auto m_verticalScrollbarDownButton = 0xC8;
+		constexpr auto m_ScrollView = 0xD0;
+		constexpr auto m_CustomStyles = 0xD8;
+		constexpr auto m_Settings = 0xE0;
+		constexpr auto m_Styles = 0xE8;
+		constexpr auto m_SkinChanged = 0x8;
+		constexpr auto current = 0x10;
+	};
+
+	namespace UnityEngine_GUIStyle {
+		constexpr auto m_Ptr = 0x10;
+		constexpr auto m_Normal = 0x18;
+		constexpr auto m_Hover = 0x20;
+		constexpr auto m_Active = 0x28;
+		constexpr auto m_Focused = 0x30;
+		constexpr auto m_OnNormal = 0x38;
+		constexpr auto m_OnHover = 0x40;
+		constexpr auto m_OnActive = 0x48;
+		constexpr auto m_OnFocused = 0x50;
+		constexpr auto m_Border = 0x58;
+		constexpr auto m_Padding = 0x60;
+		constexpr auto m_Margin = 0x68;
+		constexpr auto m_Overflow = 0x70;
+		constexpr auto m_Name = 0x78;
+		constexpr auto s_None = 0x8;
+	};
+
+	namespace UnityEngine_GUIContent {
+		constexpr auto m_Text = 0x10;
+		constexpr auto m_Image = 0x18;
+		constexpr auto m_Tooltip = 0x20;
+		constexpr auto s_Image = 0x8;
+		constexpr auto s_TextImage = 0x10;
+		constexpr auto none = 0x18;
+	};
+
+	namespace UnityEngine_Event {
+		constexpr auto m_Ptr = 0x10;
+		constexpr auto s_MasterEvent = 0x8;
+	};
+
+	namespace UnityEngine_DDraw {
+		constexpr auto singleton = 0x8;
+		constexpr auto list = 0x18;
+		constexpr auto AutoYPosition = 0x10;
+		constexpr auto LastAutoY = 0x14;
+		constexpr auto lineMaterial = 0x18;
+		constexpr auto _skin = 0x20;
+	};
+
+	namespace UnityEngine_Quaternion {
+		constexpr auto x = 0x10;
+		constexpr auto y = 0x14;
+		constexpr auto z = 0x18;
+		constexpr auto w = 0x1C;
+	};
+}

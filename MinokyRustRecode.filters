@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Offsets.h" />
+    <ClInclude Include="Vector.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Crt.h">
+      <Filter>Utilits</Filter>
+    </ClInclude>
+    <ClInclude Include="imports.h" />
+    <ClInclude Include="il2cpp.h">
+      <Filter>Utilits</Filter>
+    </ClInclude>
+    <ClInclude Include="XorStr.h">
+      <Filter>Utilits</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Maths.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="OnGui.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="GameClasses.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Unity.h">
+      <Filter>Utilits</Filter>
+    </ClInclude>
+    <ClInclude Include="Structs.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Vars.h" />
+    <ClInclude Include="Esp.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStructs.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooks.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Exploits.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="LazyImporter.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoDump.h" />
+    <ClInclude Include="GameThread.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="eac.h" />
+    <ClInclude Include="bytes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Math">
+      <UniqueIdentifier>{0d67085a-0e44-4484-a328-65fb197d27bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilits">
+      <UniqueIdentifier>{eb7104d2-8188-425f-ae3d-d51853ee9c47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{00d3ab86-7aec-42c4-96fc-5f22d241df2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{7005d541-c726-459a-bbbe-46d2724067bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{0604ceaf-f6c9-4a5e-8985-4b759bbab915}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+  </ItemGroup>
+</Project>
